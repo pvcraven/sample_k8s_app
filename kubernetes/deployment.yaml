@@ -37,3 +37,6 @@ spec:
             port: 5000
           initialDelaySeconds: 10
           periodSeconds: 10
+        envFrom:
+        - secretRef:
+            name: mysecret

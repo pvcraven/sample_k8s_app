@@ -1,10 +1,16 @@
+import os
+
 from flask import Flask
+
+
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    return "Hello from Python! v4"
+    username = os.getenv('SECRET_USERNAME')
+    userpassword = os.getenv('SECRET_PASSWORD')
+    return f"Hello from Python! v5 {username=} -- {userpassword=}"
 
 
 @app.route("/health")

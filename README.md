@@ -5,9 +5,6 @@ Very simple hello world python Flask application for deploying to k8s.
 ## Important commands
 
 
-# Apply changes to k8s
-kubectl apply -f ../kubernetes/deployment.yaml
-
 Authorize with:
 `gcloud auth configure-docker us-central1-docker.pkg.dev`
 
@@ -19,3 +16,7 @@ To run the image and map the port:
 
 Push:
 `docker push us-central1-docker.pkg.dev/sandbox-service-2/craven-repository/hello-python:latest`
+
+Apply changes to k8s
+`kubectl apply -f ../kubernetes/deployment.yaml`
+`kubectl apply -f ../kubernetes/secrets.yaml`
