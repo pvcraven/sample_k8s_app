@@ -30,4 +30,10 @@ spec:
         image: us-central1-docker.pkg.dev/sandbox-service-2/craven-repository/hello-python:latest
         ports:
         - containerPort: 5000
-
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /health
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 10
